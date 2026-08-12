@@ -1,52 +1,58 @@
 import api from "../services/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+
+import "../styles/Login.css";
+
 function Login() {
     const[email, setEmail]=useState('');
     const[password, setPassword]=useState('');
     const navigate = useNavigate();
 async function handleLogin(e){
     e.preventDefault();
-    alert("login button clicked");
+
     try{
         const response=await api.post("/login",{
             email,
             password,
         });
-        console.log(response.data);
-        localStorage.setItem("token", response.data.token);
+
+        const token=response.data.token;
+
+        localStorage.setItem("token", token);
+        const decoded=jwtDecode(token)
+
         alert(response.data.login);
-        navigate("/dashboard");
+        if (decoded.role === "admin") {
+            navigate("/admin");
+          } else {
+            navigate("/dashboard");
+          }
+
     }catch(error){
-        console.log(error);
-        console.log(error.response);
         if(error.response){
             alert(error.response.data.error)
         }
         else{
             alert(error.message)
         }
-        alert("login attempt failed");
     }
 }
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
+        <div className="login-container">
+            <h1>Welcome Back</h1>
+            <form className="login-form" onSubmit={handleLogin}>
             <div>
-                <label>Email</label>
-                <br/>
-                <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />            
+                <input type="email" className="login-input" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />            
             </div>
-            <br/>
-            <div>
-                <label>Password</label>
-                <br/>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-            </div>
-            <br/>
 
-            <button type="submit">LogIn</button>
+            <div>
+                <input type="password" className="login-input" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+            </div>
+            
+            <button className="login-btn" type="submit">Login</button>
+            <p className="login-footer">Don't have an account? <span onClick={() => navigate("/register")}>Register</span></p>
             </form>
         </div>
     );

@@ -1,0 +1,312 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f5f7fb 0%, #e9edf5 100%);
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 36px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(30, 41, 59, 0.08), 0 2px 8px rgba(30, 41, 59, 0.04);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.info-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: #475569;
+  font-size: 14px;
+  transition: color .2s;
+}
+
+.info-button:hover {
+  color: #6366f1;
+}
+
+.info-button img {
+  border-radius: 50%;
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+  transition: .3s;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #eef1f6;
+}
+
+.form-input {
+  padding: 13px 16px;
+  font-size: 15px;
+  border: 1.5px solid #dde3ec;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+textarea.form-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.create-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.create-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4);
+}
+
+.task-list {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.task-card {
+  background: white;
+  padding: 24px 26px;
+  border-radius: 12px;
+  border: 1px solid #eef1f6;
+  box-shadow: 0 2px 10px rgba(30, 41, 59, 0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(30, 41, 59, 0.12);
+  border-color: #e0e7ff;
+}
+
+.task-card h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.task-card p {
+  margin: 10px 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.due-date {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.task-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border: none;
+  padding: 9px 18px;
+  border-radius: 7px;
+  color: #78350f;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.create-btn,
+.edit-btn,
+.delete-btn,
+.logout-btn {
+  transition: all .25s ease;
+}
+
+.create-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+}
+
+.task-status {
+  font-weight: 600;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Default badge look (used when no status-specific class is applied) */
+.task-status span {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+/* Status-specific badge colors.
+ Add these classNames conditionally in Dashboard.jsx based on task.status,
+ e.g. className={task.status === "Completed" ? "status-completed" : task.status === "In Progress" ? "status-in-progress" : "status-pending"} */
+.task-status .status-completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.task-status .status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.task-status .status-in-progress {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  padding: 50px;
+  font-size: 15px;
+}
+
+.dashboard-title h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #1e293b;
+}
+
+.dashboard-title p {
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+      margin: 20px;
+      padding: 24px 20px;
+  }
+
+  .dashboard-header {
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+  }
+
+  .header-buttons {
+      width: 100%;
+      justify-content: space-between;
+  }
+
+  .task-buttons {
+      flex-direction: column;
+  }
+}
