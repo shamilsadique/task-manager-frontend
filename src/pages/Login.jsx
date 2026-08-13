@@ -52,6 +52,7 @@ async function handleLogin(e){
             </div>
             
             <button className="login-btn" type="submit">Login</button>
+            <p className="forgot-password-link" onClick={() => navigate("/forgot-password")}> Forgot Password?</p>
             <p className="login-footer">Don't have an account? <span onClick={() => navigate("/register")}>Register</span></p>
             </form>
         </div>

@@ -89,3 +89,16 @@ body {
       padding: 30px 25px;
   }
 }
+
+.forgot-password-link {
+  text-align: right;
+  margin-top: 1px;
+  font-size: 14px;
+}
+
+.forgot-password-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
