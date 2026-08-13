@@ -221,3 +221,113 @@ h2{
       gap: 12px;
   }
 }
+
+.assign-task-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  transition: .25s;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.assign-task-btn:hover {
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+  transform: translateY(-2px);
+}
+
+.assign-task-form {
+  background: #f8fafc;
+  border: 1px solid #eef1f6;
+  border-radius: 14px;
+  padding: 26px 28px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.05);
+  animation: slideDown .25s ease;
+}
+
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-8px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.assign-task-form h3 {
+  margin: 0 0 4px;
+  color: #1e293b;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.assign-task-form input,
+.assign-task-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1.5px solid #dde3ec;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  background: white;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+.assign-task-form input:focus,
+.assign-task-form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.assign-task-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.assign-task-form button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: .25s;
+}
+
+/* Submit button ("Assign Task") */
+.assign-task-form button[type="submit"] {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.assign-task-form button[type="submit"]:hover {
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Cancel button */
+.assign-task-form button[type="button"] {
+  background: #e2e8f0;
+  color: #475569;
+  margin-left: 8px;
+}
+
+.assign-task-form button[type="button"]:hover {
+  background: #cbd5e1;
+  transform: translateY(-2px);
+}
